@@ -39,6 +39,11 @@ nav h1 {
     line-height: 1.2;
 }
 
+.brand-link {
+    color: white;
+    font-weight: 800;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -56,6 +61,25 @@ nav a {
 
 nav a:hover {
     color: white;
+}
+
+.nav-icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.linkedin-icon {
+    display: inline-grid;
+    width: 22px;
+    height: 22px;
+    place-items: center;
+    border-radius: 4px;
+    background: #e5e7eb;
+    color: #111827;
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1;
 }
 
 .hero {
@@ -82,8 +106,8 @@ nav a:hover {
 
 .hero h2 {
     margin: 0;
-    font-size: clamp(2.6rem, 7vw, 5rem);
-    line-height: 0.98;
+    font-size: clamp(2.2rem, 5vw, 3.9rem);
+    line-height: 1.04;
 }
 
 .hero p:not(.eyebrow) {
@@ -178,15 +202,74 @@ section p {
 }
 
 footer {
-    background: #111827;
-    color: white;
-    text-align: center;
-    padding: 20px;
+    background: #0f2b2d;
+    color: #ecfeff;
     margin-top: 40px;
 }
 
-footer p {
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1.1fr auto 1fr;
+    align-items: end;
+    gap: 48px;
+    width: min(1120px, calc(100% - 48px));
+    min-height: 280px;
+    margin: 0 auto;
+    padding: 64px 0 36px;
+}
+
+.footer-profile {
+    display: grid;
+    gap: 18px;
+}
+
+.footer-profile p,
+.footer-meta p {
     margin: 0;
+}
+
+.footer-name {
+    font-weight: 800;
+}
+
+.footer-profile a,
+.footer-meta a {
+    color: #ecfeff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.footer-profile a:hover,
+.footer-meta a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-self: start;
+}
+
+.footer-socials a {
+    display: inline-grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: 4px;
+    background: #ecfeff;
+    color: #0f2b2d;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.footer-meta {
+    display: flex;
+    justify-content: flex-end;
+    gap: 28px;
+    text-align: right;
 }
 
 .btn {
@@ -234,6 +317,10 @@ footer p {
         font-size: 0.9rem;
     }
 
+    .nav-icon-link span:last-child {
+        display: none;
+    }
+
     .hero {
         grid-template-columns: 1fr;
         width: min(100% - 32px, 560px);
@@ -269,6 +356,26 @@ footer p {
     .project-grid {
         grid-template-columns: 1fr;
     }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 34px;
+        width: min(100% - 32px, 560px);
+        min-height: 0;
+        padding: 48px 0 34px;
+    }
+
+    .footer-socials {
+        justify-self: start;
+    }
+
+    .footer-meta {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        text-align: left;
+    }
 }
 
 @media (max-width: 420px) {
@@ -278,6 +385,6 @@ footer p {
     }
 
     .hero h2 {
-        font-size: 2.35rem;
+        font-size: 2.05rem;
     }
 }
