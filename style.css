@@ -330,6 +330,10 @@ section p {
     margin-top: 32px;
 }
 
+.focus-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .focus-card,
 .project-card {
     min-height: 190px;
@@ -384,6 +388,16 @@ section p {
 
 .project-card a:hover {
     text-decoration: underline;
+}
+
+.project-detail {
+    min-height: 420px;
+}
+
+.detail-hero {
+    min-height: 420px;
+    display: grid;
+    align-content: center;
 }
 
 .contact-section {
