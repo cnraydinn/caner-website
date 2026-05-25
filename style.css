@@ -400,7 +400,7 @@ section p {
 
 .contact-list {
     display: grid;
-    gap: 10px;
+    gap: 14px;
     min-width: min(100%, 340px);
     padding: 26px;
     border: 1px solid var(--line);
@@ -409,18 +409,42 @@ section p {
 }
 
 .contact-list p {
+    display: flex;
+    align-items: center;
+    gap: 14px;
     max-width: none;
     color: var(--muted);
 }
 
 .contact-list a {
+    display: grid;
+    gap: 2px;
     color: var(--green);
     font-weight: 800;
     text-decoration: none;
 }
 
+.contact-list a span {
+    color: var(--muted);
+    font-weight: 700;
+}
+
 .contact-list a:hover {
     text-decoration: underline;
+}
+
+.contact-icon,
+.footer-phone-icon {
+    display: inline-grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--green-soft);
+    color: var(--green);
+    font-size: 1rem;
+    font-weight: 900;
 }
 
 footer {
@@ -491,9 +515,24 @@ footer {
 
 .footer-meta {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
     gap: 28px;
     text-align: right;
+}
+
+.footer-meta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-phone-icon {
+    width: 28px;
+    height: 28px;
+    color: #0b1728;
+    background: #ecfeff;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 820px) {
