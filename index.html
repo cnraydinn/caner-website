@@ -14,11 +14,21 @@
 
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header>
-    <nav>
+    <nav aria-label="Primary navigation">
         <h1><a href="#" class="brand-link">Caner Aydin</a></h1>
 
-        <ul>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+        <label for="menu-toggle" class="menu-button">
+            <span class="sr-only">Menu</span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <ul id="primary-menu" class="nav-menu">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li>
@@ -28,19 +38,18 @@
                 </a>
             </li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact" class="nav-cta">Hire Me</a></li>
         </ul>
     </nav>
 </header>
 
-<main>
+<main id="main-content">
 
-<section class="hero">
+<section class="hero" aria-labelledby="hero-title">
 
     <div class="hero-content">
         <p class="eyebrow">Technical Product Lead</p>
 
-        <h2>Building <span>Scalable</span> Digital Products</h2>
+        <h2 id="hero-title">Building <span>Scalable</span> Digital Products</h2>
 
         <p>
             I help teams turn complex digital platforms into clear, scalable and impactful product experiences.
@@ -74,16 +83,16 @@
         </div>
     </div>
 
-    <div class="hero-image" aria-label="Portrait of Caner Aydin">
-        <img src="assets/image/profilphoto.png" alt="Caner Aydin">
+    <div class="hero-image">
+        <img src="assets/image/profilphoto.png" alt="Portrait of Caner Aydin in a suit">
     </div>
 
 </section>
 
-<section id="about">
+<section id="about" aria-labelledby="about-title">
 
     <p class="section-kicker">What I Do</p>
-    <h2>Product leadership for complex digital platforms</h2>
+    <h2 id="about-title">Product leadership for complex digital platforms</h2>
 
     <p>
         Senior Technical Product Manager with 10+ years of experience delivering and scaling large-scale digital platforms across
@@ -116,10 +125,10 @@
 
 </section>
 
-<section id="projects">
+<section id="projects" aria-labelledby="projects-title">
 
     <p class="section-kicker">Featured Projects</p>
-    <h2>Projects</h2>
+    <h2 id="projects-title">Projects</h2>
 
     <div class="project-grid">
         <article class="project-card">
@@ -143,11 +152,11 @@
 
 </section>
 
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section" aria-labelledby="contact-title">
 
     <div>
         <p class="section-kicker">Contact</p>
-        <h2>Let's build something great together.</h2>
+        <h2 id="contact-title">Let's build something great together.</h2>
     </div>
 
     <div class="contact-list">
