@@ -158,6 +158,25 @@ section p {
     font-size: 0.96rem;
 }
 
+.contact-list {
+    display: grid;
+    gap: 10px;
+}
+
+.contact-list p {
+    max-width: none;
+}
+
+.contact-list a {
+    color: #0f766e;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
 footer {
     background: #111827;
     color: white;
