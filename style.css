@@ -1,52 +1,264 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color: #111827;
+    background: #f8fafc;
+    line-height: 1.6;
 }
 
 header {
-    background: #1f2937;
+    background: #111827;
     color: white;
-    padding: 15px 40px;
+    padding: 18px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 nav {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    gap: 24px;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.2;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
-    color: white;
+    color: #e5e7eb;
     text-decoration: none;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    color: white;
 }
 
 .hero {
-    background: #f3f4f6;
-    padding: 80px 40px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+    align-items: center;
+    gap: 48px;
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 88px 0 72px;
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: #0f766e;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    line-height: 0.98;
+}
+
+.hero p:not(.eyebrow) {
+    margin: 24px 0 0;
+    max-width: 560px;
+    color: #4b5563;
+    font-size: 1.18rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.hero-image {
+    justify-self: end;
+    width: min(100%, 360px);
+    aspect-ratio: 1;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #d1d5db;
+    box-shadow: 0 24px 60px rgba(17, 24, 39, 0.18);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 section {
-    padding: 60px 40px;
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 56px 0;
+}
+
+section h2 {
+    margin: 0 0 18px;
+    font-size: 1.8rem;
+}
+
+section p {
+    max-width: 820px;
+    margin: 0;
+    color: #4b5563;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.project-card {
+    min-height: 180px;
+    padding: 24px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.project-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+}
+
+.project-card p {
+    font-size: 0.96rem;
 }
 
 footer {
-    background: #1f2937;
+    background: #111827;
     color: white;
     text-align: center;
     padding: 20px;
+    margin-top: 40px;
 }
+
+footer p {
+    margin: 0;
+}
+
 .btn {
     display: inline-block;
-    margin-top: 20px;
     padding: 12px 24px;
-    background: #1f2937;
+    background: #111827;
     color: white;
     text-decoration: none;
     border-radius: 6px;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background: #0f172a;
+}
+
+.btn-secondary {
+    background: white;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+    background: #f3f4f6;
+}
+
+@media (max-width: 760px) {
+    header {
+        padding: 16px 20px;
+    }
+
+    nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    nav ul {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        width: min(100% - 32px, 560px);
+        gap: 32px;
+        padding: 48px 0 44px;
+    }
+
+    .hero-image {
+        justify-self: start;
+        width: min(100%, 300px);
+        border-radius: 20px;
+        order: -1;
+    }
+
+    .hero p:not(.eyebrow) {
+        font-size: 1.05rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    section {
+        width: min(100% - 32px, 560px);
+        padding: 40px 0;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .hero h2 {
+        font-size: 2.35rem;
+    }
 }
