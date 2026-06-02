@@ -151,20 +151,6 @@ nav a:hover {
 .nav-icon-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-}
-
-.linkedin-icon {
-    display: inline-grid;
-    width: 22px;
-    height: 22px;
-    place-items: center;
-    border-radius: 5px;
-    background: var(--white-soft);
-    color: var(--bg);
-    font-size: 0.8rem;
-    font-weight: 900;
-    line-height: 1;
 }
 
 .menu-toggle {
@@ -302,6 +288,16 @@ main {
     font-size: 0.9rem;
 }
 
+.hero-stats small {
+    display: block;
+    max-width: 18ch;
+    margin-top: 3px;
+    color: rgba(195, 206, 221, 0.78);
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
 .hero-image {
     position: relative;
     justify-self: end;
@@ -406,6 +402,19 @@ section p {
     font-size: 1.05rem;
 }
 
+.project-tag {
+    width: fit-content;
+    margin-bottom: 18px;
+    padding: 5px 9px;
+    border: 1px solid rgba(16, 185, 129, 0.24);
+    border-radius: 999px;
+    background: var(--green-soft);
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
 .project-card a {
     display: inline-flex;
     margin-top: auto;
@@ -434,8 +443,9 @@ section p {
 
 .contact-list {
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
-    min-width: min(100%, 340px);
+    min-width: min(100%, 520px);
     padding: 26px;
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -447,6 +457,7 @@ section p {
     align-items: center;
     gap: 14px;
     max-width: none;
+    min-height: 78px;
     color: var(--muted);
 }
 
@@ -467,8 +478,7 @@ section p {
     text-decoration: underline;
 }
 
-.contact-icon,
-.footer-phone-icon {
+.contact-icon {
     display: inline-grid;
     width: 34px;
     height: 34px;
@@ -493,7 +503,7 @@ footer {
 
 .footer-inner {
     display: grid;
-    grid-template-columns: 1.1fr auto 1fr;
+    grid-template-columns: 1fr auto 1fr;
     align-items: end;
     gap: 48px;
     min-height: 240px;
@@ -551,7 +561,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 28px;
     text-align: right;
 }
 
@@ -559,14 +568,6 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-}
-
-.footer-phone-icon {
-    width: 28px;
-    height: 28px;
-    color: #0b1728;
-    background: #ecfeff;
-    font-size: 0.9rem;
 }
 
 .legal-page {
@@ -634,11 +635,6 @@ html[data-theme="light"] nav a:hover {
     color: var(--green-strong);
 }
 
-html[data-theme="light"] .linkedin-icon {
-    background: #0f172a;
-    color: white;
-}
-
 html[data-theme="light"] .theme-toggle {
     border-color: rgba(15, 23, 42, 0.16);
     background: #f1f5f9;
@@ -675,6 +671,7 @@ html[data-theme="light"] .project-detail-content h3 {
 html[data-theme="light"] .hero p:not(.eyebrow),
 html[data-theme="light"] section p,
 html[data-theme="light"] .hero-stats span,
+html[data-theme="light"] .hero-stats small,
 html[data-theme="light"] .project-detail-hero p:not(.project-badge),
 html[data-theme="light"] .contact-list p,
 html[data-theme="light"] .contact-list a span,
@@ -710,8 +707,7 @@ html[data-theme="light"] .footer-meta p {
     color: #0f172a;
 }
 
-html[data-theme="light"] .footer-socials a,
-html[data-theme="light"] .footer-phone-icon {
+html[data-theme="light"] .footer-socials a {
     background: #0f172a;
     color: white;
 }
@@ -984,6 +980,11 @@ html[data-theme="light"] .legal-card {
     .contact-section {
         align-items: stretch;
         flex-direction: column;
+    }
+
+    .contact-list {
+        grid-template-columns: 1fr;
+        min-width: 0;
     }
 
     .footer-inner {
