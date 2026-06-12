@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="A very serious countdown to Monday at 08:00 Berlin time.">
+    <title>Monday Launch Sequence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="fireworks" aria-hidden="true"></canvas>
+
+    <main>
+        <p class="eyebrow">Berlin office time</p>
+        <h1>Monday Launch Sequence</h1>
+        <p class="intro">Until everyone suddenly remembers the weekly sync.</p>
+
+        <section class="countdown" aria-label="Countdown to Monday at 08:00" aria-live="polite">
+            <div class="time-unit">
+                <strong id="days">00</strong>
+                <span>Days</span>
+            </div>
+            <div class="separator" aria-hidden="true">:</div>
+            <div class="time-unit">
+                <strong id="hours">00</strong>
+                <span>Hours</span>
+            </div>
+            <div class="separator" aria-hidden="true">:</div>
+            <div class="time-unit">
+                <strong id="minutes">00</strong>
+                <span>Minutes</span>
+            </div>
+            <div class="separator" aria-hidden="true">:</div>
+            <div class="time-unit">
+                <strong id="seconds">00</strong>
+                <span>Seconds</span>
+            </div>
+        </section>
+
+        <div class="status">
+            <span class="status-light" aria-hidden="true"></span>
+            <p id="status-text">Next launch: Monday, 08:00 · Europe/Berlin</p>
+        </div>
+
+        <p class="fine-print">Coffee is optional. Looking busy is not.</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
